@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+    <form role="form" method="post" action="{% url 'register' %}">
+    <article id="subheading">
+        <br>
+    <h2>Please fill in below to create a new account</h2>
+        <br>
+    </article>
+        {% csrf_token %}
+        {{ form| as_bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create account</button>
+        </div>
+    </form>
+{% endblock %}

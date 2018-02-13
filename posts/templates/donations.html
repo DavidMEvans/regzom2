@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+
+{% block head_js %}
+    <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+        //]]>
+    </script>
+    <script type="text/javascript" src="{% static "../../rubbish/js/stripe.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <form role="form" method="post" id="register-form" action="{% url 'donations' %}">
+        <div id="credit-card-errors" style="display:none">
+        <div class="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
+        <br>
+        <article id="subheading">
+        <h2>Make a Donation</h2>
+        <br>
+        <h2>A fixed sum of €5 will be taken on completion of the form</h2></article>
+        <br><br>
+        {% csrf_token %}
+        {{ form|as_bootstrap }}
+
+        <div class="form-group">
+        <br>
+        <input class="btn btn-primary" id="validate_card_btn" name="commit" type="submit" value="Validate Credit Card" formaction="/donated/">
+        </div>
+    </form>
+
+{% endblock %}
