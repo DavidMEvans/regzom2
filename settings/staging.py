@@ -5,6 +5,8 @@ DEBUG = False
 
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
 
+DATABASES = {'default': dj_database_url.parse(os.environ.get('CLEARDB_DATABASE_URL')) }
+
 # Stripe environment variables
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', '<STRIPE_PUBLISHABLE key>')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET', '<STRIPE_SECRET key>')
