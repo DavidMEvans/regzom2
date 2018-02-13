@@ -3,7 +3,7 @@ import dj_database_url
 
 DEBUG = False
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('mysql://bb120764b46c08:a738bd2d@eu-cdbr-west-02.cleardb.net/heroku_c81deb35ca531ab?')) }
+DATABASES = {'default': dj_database_url.parse(os.environ.get('mysql://bf14ce4f234bcc:4e982707@eu-cdbr-west-02.cleardb.net/heroku_c13ee66a07c8a5c?')) }
 
 # Stripe environment variables
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', '<STRIPE_PUBLISHABLE key>')
