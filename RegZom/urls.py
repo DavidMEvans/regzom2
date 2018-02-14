@@ -45,10 +45,3 @@ urlpatterns = [
     url(r'^cancel_subscription/$', accounts_views.cancel_subscription),
     url(r'^subscriptions_webhook/$', accounts_views.subscriptions_webhook, name='subscriptions_webhook'),
 ]
-
-#if settings.DEBUG:
-#    import debug_toolbar
-
-#urlpatterns += [
-#        url(r'^__debug__/', include(debug_toolbar.urls)),
-#    ]
